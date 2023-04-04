@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    apiKey: 'AIzaSyB3zMzd3IFSmOtysvrxruAv7LAIyJy32mM',
+    authDomain: 'quiz-app-e0c8e.firebaseapp.com',
+    projectId: 'quiz-app-e0c8e',
+    storageBucket: 'quiz-app-e0c8e.appspot.com',
     messagingSenderId: "166681806923",
-    appId: import.meta.env.VITE_FIREBASE_APPID
+    appId: '1:166681806923:web:4fc9f38ec642591dc4a5ce'
   };
   
   // Initialize Firebase

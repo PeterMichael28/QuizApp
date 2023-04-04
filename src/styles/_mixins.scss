@@ -1,0 +1,27 @@
+@mixin screen-min($min) { 
+    @media (min-width: $min) { 
+      @content 
+    } 
+  };
+  
+  // For Desktop-First Design
+  @mixin screen-max($max) { 
+    @media (max-width: $max) { 
+      @content 
+    } 
+  };
+  
+  // For Hybrid Design
+  @mixin screen-minmax($min, $max){ 
+    @media (min-width: $min) and (max-width: $max - 1){ 
+      @content 
+    }
+  };
+
+  .container {
+    background-color: lightgrey;
+    margin: 0 auto;
+    width: 100%; /* was 550px*/
+    @include screen-min(576px){max-width: 576px;}
+    @include screen-min(768px){max-width: 768px;}
+  }

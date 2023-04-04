@@ -1,0 +1,83 @@
+.emailValidation {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .4);
+
+
+
+    .con{
+        background: white;
+        display:flex;
+        gap:20px;
+        color: black;
+        padding: 20px;
+        flex-direction: column;
+        width: 400px;
+        border-radius: 10px;
+
+        @include screen-max(576px){
+            width: 90%;
+        }
+
+        //error message
+        .error{
+            color: #f04438;
+            margin-top: 5px;
+            font-size: 0.8rem;
+        }
+
+        .note{
+
+
+            @include screen-max(576px){
+                font-size: 0.9rem;
+                color:crimson;
+            }
+        }
+
+        .input{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+            flex-direction: column;
+            
+
+            label{
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #808080;
+            }
+
+            input{
+                border: 1px solid gray;
+                outline: none;
+                padding: 10px 15px;
+                width: 100%;
+                border-radius: 3px;
+
+            }
+        }
+
+        .btns{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: flex-end;
+
+            button{
+                border: none;
+                outline: none;
+                padding: 7px 15px !important;
+                box-shadow: 1px 1px 2px 2px rgb(191, 191, 191) !important;
+                font-weight: 600 !important;
+            }
+        }
+    }
+}
