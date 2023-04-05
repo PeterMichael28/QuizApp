@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { selectQues, setEditModeFalse } from '../features/editQuizSlice';
+import { isEditMode, selectQues, setEditModeFalse } from '../features/editQuizSlice';
 
 const EditQuestionPage = ({onAddQuestion}) => {
 
     const dispatch = useDispatch()
+    const editRef = useRef()
 
     const selectedQues = useSelector(selectQues)
 
+  const editMode = useSelector( isEditMode )
   
     const index = selectedQues.index 
 
@@ -48,6 +50,10 @@ const EditQuestionPage = ({onAddQuestion}) => {
     };
     
 
+  useEffect( () => {
+    window.scrollTo(0, 0)
+  }, [] )
+
 
   return (
     <div className='create-ques'>
@@ -55,7 +61,7 @@ const EditQuestionPage = ({onAddQuestion}) => {
       <form onSubmit={handleEditSubmit }>
         <div className='input-div'>
           <label>Question Text:</label>
-          <input type="text" value={questionText} onChange={(e) => setQuestionText(e.target.value)} required />
+          <textarea value={ questionText } onChange={ ( e ) => setQuestionText( e.target.value ) } required id='inp' />
         </div>
         <div className='input-div'>
           <label>Choice 1:</label>

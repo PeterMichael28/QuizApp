@@ -1,0 +1,99 @@
+//results page
+.results{
+    max-width: 1000px;
+    height: 100vh;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+    color: white;
+
+    h2{
+        font-size: 3rem;
+        margin-bottom: 20px;
+
+    }
+
+    .total{
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+
+        span{
+            font-size: 2.3rem;
+        }
+    }
+
+    .result-text{
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        p{
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+
+            @include screen-max(576px){
+              font-size: 0.8rem;
+            }
+        }
+    }
+
+    .btns-con {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        button{
+            padding: 13px 25px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: .4s ease all;
+
+            @include screen-max(576px){
+                padding: 13px;
+                font-size: .8rem;
+            }
+
+
+
+            &:nth-of-type(1) {
+                background-color: #01bdd7;
+                color: white;
+                
+
+                &:hover{
+                    border: 1px solid #01bdd7;
+                    background-color: transparent;
+                    color: #01bdd7;
+                }
+            }
+
+            &:nth-of-type(2) {
+                background-color: crimson;
+                color: white;
+                
+
+                &:hover{
+                    border: 1px solid crimson;
+                    background-color: transparent;
+                    color: white;
+                }
+            }
+        }
+    }
+
+}

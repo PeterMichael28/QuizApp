@@ -7,6 +7,7 @@ import QuizPage from "./pages/QuizPage";
 import Result from "./pages/Result";
 import CreateQuiz from "./pages/CreateQuiz";
 import EditQuiz from "./pages/EditQuiz";
+import Instructions from "./pages/Instructions";
 
 
 
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
   {
     path: "/quiz-categories",
     element: <Home />
+  },
+  {
+    path: "/instructions/:quizId",
+    element: <Instructions />
   },
   {
     path: "/quiz/:quizId",

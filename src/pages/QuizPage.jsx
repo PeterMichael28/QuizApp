@@ -116,7 +116,7 @@ const QuizPage = () => {
           <p>Question {currentQuestion + 1} of {questions?.length}</p>
           <div className='timer' style={{color: time.minutes < 5 ? 'crimson' : 'green'}}>
             <MdOutlineTimer fontSize={20}/>
-            <p>{ timer.minutes < 9 ? `0${timer.minutes}` : timer.minutes}:{timer.seconds < 9 ? `0${timer.seconds}` : timer.seconds}</p>
+            <p>{ timer.minutes <= 9 ? `0${timer.minutes}` : timer.minutes}:{timer.seconds <= 9 ? `0${timer.seconds}` : timer.seconds}</p>
           </div>
         </div>
           {questions.length > 0 && <Questions questions={ questions} />}

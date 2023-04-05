@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { deleteDoc, doc } from 'firebase/firestore';
 import ThreeDotsLoader from './ThreeDotsLoader';
 
-const EmailValidation = ({emailValidation, setValidation, id}) => {
+const EmailValidation = ({emailValidation, setValidation, id, instructions}) => {
 
     const navigate = useNavigate()
 
@@ -13,6 +13,8 @@ const EmailValidation = ({emailValidation, setValidation, id}) => {
     const [ validationError, setValidationError ] = useState( '' )
     const [onDelete, setOnDelete] = useState(false)
 
+
+    //validating email before giving access to delete or edit
     const onValidate = async () => {
         if ( email !== emailValidation ) {
           setValidationError('Authorization Denied!!! Enter the correct email to continue')
@@ -44,8 +46,15 @@ const EmailValidation = ({emailValidation, setValidation, id}) => {
 
           <div className='btns'>
                   <button onClick={ () => {
+                    if(instructions === 'instructions'){
+                      navigate(`/instructions/${id}`)
+                      setValidation(false)
+                    } else {
                       navigate( '/quiz-categories' )
                       setValidation(false)
+                    }
+                     
+                      
                   } }>Cancel</button>
             {!onDelete && <button onClick={onValidate}>Submit</button>}
             {onDelete && <ThreeDotsLoader color='#2e3e9d'/>}

@@ -15,7 +15,7 @@ const editQuizSlice = createSlice({
 
     selectQuestion: ( state, action ) => {
 
-      console.log(action.payload)
+      
       const { index, questionText, options } = action.payload
       const ques = {
         index,

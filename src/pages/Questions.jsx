@@ -56,25 +56,28 @@ const Questions = ({ questions }) => {
 
    {/* Navigation Buttons */}
    <div className="btns-con">
-    <button
+    {showPrevButton && <button
      onClick={() => dispatch(prevQuestion())}
      disabled={!showPrevButton && true}
+     className="previous"
     >
      Prev
-    </button>
-    <button
+    </button>}
+  {showNextButton &&  <button
      onClick={() => dispatch(nextquestion())}
      disabled={!showNextButton && true}
+     className="next"
     >
      Next
-    </button>
+    </button>}
     {!showNextButton ? (
-     <button onClick={() => navigate("/results")}>
+     <button onClick={() => navigate("/results")}  className="submit">
       Submit
      </button>
     ) : (
      <button 
         onClick={() =>  onClickLight('Cancel Quiz', 'Are you sure you want to quit', handleHome, null, 'Yes')}
+        className="quit"
      >Quit</button>
     )}
    </div>

@@ -15,6 +15,8 @@ const CreateQuestionPage = ({onAddQuestion}) => {
     const [choice4, setChoice4] = useState('');
     const [correctAnswer, setCorrectAnswer] = useState('');
 
+
+    //saving question
     const handleSubmit = async (e) => {
       
         e.preventDefault()
@@ -41,7 +43,7 @@ const CreateQuestionPage = ({onAddQuestion}) => {
       <form onSubmit={handleSubmit}>
         <div className='input-div'>
           <label>Question Text:</label>
-          <input type="text" value={questionText} onChange={(e) => setQuestionText(e.target.value)} required />
+          <textarea value={questionText} onChange={(e) => setQuestionText(e.target.value)} required />
         </div>
         <div className='input-div'>
           <label>Choice 1:</label>

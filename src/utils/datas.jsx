@@ -32,7 +32,7 @@ export const onClickLight = (text, desc, onSubmit, id, delBtn) => {
           }
       },
       onCancel: () => {
-        alert("Cancel")
+        
         },
         btnSubmit: delBtn,
       type: 'dark'

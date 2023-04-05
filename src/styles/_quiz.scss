@@ -1,0 +1,168 @@
+
+//quiz section
+.quiz{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 1rem;
+    img{
+        max-width: 400px;
+
+        @include screen-max(576px){
+            max-width: 250px;
+            margin-bottom: .6rem;
+        }
+    }
+
+    .quiz-question-con {
+        background-color: white;
+        width: 100%;
+        height: 470px;
+        padding: .5rem 2.7rem;
+        margin-top: .4rem;
+
+        @include screen-max(576px){
+            padding: 10px;
+            height: 450px;
+        }
+
+        
+        h2{
+            font-size: 2.3rem;
+            color: #555;
+
+            @include screen-max(576px){
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        .quiz-details{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 1rem;
+
+            @include screen-max(576px){
+                font-size: .8rem;
+               padding: 0 10px;
+            }
+
+            .timer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2px;
+                font-weight: 700;
+            }
+        }
+
+        .questions-con {
+
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+
+            .question{
+                background-color: #2e3e9d;
+                width: 400px;
+                padding: 15px;
+                border-radius: 10px;
+                text-align: center;
+                font-weight: 700;
+                margin-top: 1rem;
+                @include screen-max(576px){
+                    width: 100%;
+                    padding: 14px 9px;
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                }
+            }
+
+            .options-con {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+                place-content: center;
+                margin-top: 2rem;
+
+                @include screen-max(576px){
+                    grid-template-columns: 1fr;
+                    gap: .7rem;
+                    margin-top: 1rem;
+                }
+                .option {
+                background-color: #2e3e9d;
+                padding: 15px;
+                width: 170px;
+                border-radius: 10px;
+                text-align: center;
+                font-weight: 700;
+                border: none;
+                outline: none;
+                color: white;
+                cursor: pointer;
+                transition: .3s ease all;
+
+                @include screen-max(576px){
+                   font-size: 0.7rem;
+                   padding: 10px 13px;
+                   font-weight: 500;
+                    line-height: 1.3;
+                }
+
+                &:hover {
+                    opacity: .7;
+                }
+
+              
+                }
+            }
+
+            .btns-con{
+               display: flex;
+               margin-top: 3rem;
+               gap: 26px;
+
+               @include screen-max(576px){
+                margin-top: 1.5rem;
+                
+            }
+              
+               button{
+                padding:10px 30px;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                color: white;
+                font-weight: 700;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: .3s ease all;
+
+                &:hover{
+                    opacity: 0.9;
+                }
+
+                
+                &.previous {
+                    background-color: #2e3e9d;
+                }
+
+                &.next {
+                    background-color: #01bdd7;
+                }
+                &.quit, &.submit {
+                    background-color: crimson;
+                }
+
+
+               
+               }
+            }
+        }
+    }
+}

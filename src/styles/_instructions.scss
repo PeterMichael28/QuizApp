@@ -1,0 +1,132 @@
+
+.instructions{
+    color: white;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+
+    @include screen-max(576px){
+        padding:5rem .8rem;
+    }
+
+
+    h2{
+        text-align: center;
+        letter-spacing: 2px;
+        margin-bottom: 1.5rem;
+    }
+
+    hr{
+        max-width: 300px;
+        margin-bottom: 0.3rem;
+    }
+
+    >div{
+        margin: auto;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+
+        .details{
+            margin-bottom: 2rem;
+            @include screen-max(576px){
+                margin-bottom: 1.5rem;
+            }
+
+
+            h5{
+                font-size: 1.1rem;
+            }
+            p{
+                font-size: 0.8rem;
+                margin-bottom: -7px;
+
+                &.name{
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+
+                @include screen-max(576px){
+                    font-size: 0.73rem;
+                }
+            }
+            small{
+               font-size: 0.7rem;
+                color: aqua;
+                letter-spacing: .2px;
+                
+            }
+
+            &.description {
+                max-width: 600px;
+            }
+        }
+
+      
+    }
+
+    .start{
+           margin: auto; 
+           color: white;
+           background-color: rgba(0, 255, 255, 0.65);
+           padding: 13px 25px;
+           border-radius: 7px;
+           font-weight: 700;
+           margin-top: 1rem;
+            transition: .4s ease all;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: .8px;
+            width: 300px;
+
+           &:hover{
+            background-color: rgba(0, 255, 255, 0.368);
+            transform: scale(.95)
+           }
+
+           @include screen-max(576px){
+            font-size: 1rem;
+            width: 90%;
+        }
+    }
+
+    .btns-group {
+        button{
+            position: absolute;
+            background-color: #01bdd7;
+            box-shadow: 1px 1px 2px 1px #01bed7b6;
+            color: white;
+            border: none;
+            outline: none;
+            padding: 8px 10px;
+            font-weight: 500;
+            font-size: .8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            gap: 2px;
+            transition: .5s ease all;
+
+
+            &:hover{
+                transform: scale(.9);
+            }
+
+            &.edit{
+                top: 40px;
+                left: 20px;
+            }
+
+            &.delete{
+                top: 40px;
+                right: 20px;
+                background-color: crimson;
+                box-shadow: 1px 1px 2px 1px rgb(255, 0, 0);
+            }
+        }
+        
+    }
+}

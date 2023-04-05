@@ -37,7 +37,7 @@ const EditQuiz = () => {
  const [email, setEmail] = useState("");
  const [validation, setValidation] = useState(true);
  const [onSave, setOnSave] = useState(false);
-
+ const [pageNav, setPageNav] = useState(false)
   
   //fetching the data
  useEffect(() => {
@@ -169,8 +169,11 @@ const EditQuiz = () => {
 
  return (
   <div className="create-quiz">
-   <h1>Edit Quiz</h1>
-   <div>
+   <h1 className="h1">Edit Quiz</h1>
+
+   {/* first Page */}
+     { !pageNav && (
+       <div>
     <div className="input-div">
      <label>Quiz Name:</label>
      <input
@@ -203,8 +206,20 @@ const EditQuiz = () => {
      />
     </div>
     <hr />
-   </div>
+       </div>
+     ) }
 
+
+{/* next page */}
+     { pageNav && (
+       <div>
+       {/* show edit question if editmode is true */}
+  {!editMode && (
+    <CreateQuestionPage onAddQuestion={handleAddQuestion} />
+   )}
+   {editMode && (
+    <EditQuestionPage onAddQuestion={handleAddQuestion} />
+   )}
    {questions.length > 0 && (
     <div className="ques-list">
      <h2>Questions</h2>
@@ -249,16 +264,15 @@ const EditQuiz = () => {
      }
     </div>
    )}
+       </div>
+     ) }
 
-   {/* show edit question if editmode is true */}
-   {!editMode && (
-    <CreateQuestionPage onAddQuestion={handleAddQuestion} />
-   )}
-   {editMode && (
-    <EditQuestionPage onAddQuestion={handleAddQuestion} />
-   )}
+   
 
    <hr />
+
+     <div className='action-btns'>
+   { <button style={{background : '#01bdd7'}} className='save-btn' onClick={ () => setPageNav( !pageNav )  }>{pageNav ? 'Back' : 'Next' }</button>}
    <button onClick={handleSaveQuiz} className="save-btn">
     {!onSave ? (
      "Save Edit"
@@ -267,7 +281,7 @@ const EditQuiz = () => {
     )}
    </button>
    <button
-    className="save-btn"
+    className="save-btn cancel"
     onClick={() =>
      onClickLight(
       "Cancel Edit",
@@ -280,6 +294,8 @@ const EditQuiz = () => {
    >
     Cancel
    </button>
+       
+   </div>
   </div>
  );
 };

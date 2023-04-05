@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebase";
-import { AiFillEdit } from "react-icons/ai";
-import { MdDelete } from "react-icons/md";
+
 import Spinner from "../components/Spinner";
 import { onClickLight } from "../utils/datas";
-import EmailValidation from "../components/EmailValidation";
+
 
 const Home = () => {
  const navigate = useNavigate();
@@ -56,37 +55,12 @@ const Home = () => {
     {data.length > 0 ? (
      <div className="quiz-category">
       {data.map((quiz) => (
-       <div
-       
-        //  to={`/quiz/${quiz.id}`}
+       <Link to={`/instructions/${quiz.id}`}
         key={quiz.id}
        >
-        <p onClick={() => navigate(`/quiz/${quiz.id}`)}>{quiz.quizName}</p>
-        <div>
-         <button
-          onClick={(e) => {
-           e.stopPropagation();
-           navigate(`/edit-quiz/${quiz.id}`);
-          }}
-         >
-          <AiFillEdit />
-         </button>
-         <button
-          onClick={ ( e ) => {
-            e.stopPropagation();
-            setValidation(true)
-          }}
-         >
-          <MdDelete />
-         </button>
-        </div>
-
-          {
-            validation && <EmailValidation setValidation={ setValidation } emailValidation={ quiz.email } id={ quiz.id } />  
- 
-            
-        }
-       </div>
+        {quiz.quizName}
+       
+       </Link>
       ))}
      </div>
     ) : (

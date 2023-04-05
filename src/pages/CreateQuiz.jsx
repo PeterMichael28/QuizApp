@@ -25,6 +25,7 @@ const CreateQuiz = () => {
   const [timeLimit, setTimeLimit] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [onSave, setOnSave] = useState(false)
+  const [pageNav, setPageNav] = useState(false)
 
   const dispatch = useDispatch()
   const editMode = useSelector(isEditMode)
@@ -118,8 +119,14 @@ const handleCancel = () => {
 
   return (
     <div className='create-quiz'>
-        <h1>Create a New Quiz</h1>
+
+      
+      
+        <h1 className='h1'>Create a New Quiz</h1>
       <div>
+        {/* first page */}
+        {!pageNav &&
+          (<div>       
       <div className='input-div'>
           <label>Email:</label>
           <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder='example@example.com'/>
@@ -137,9 +144,18 @@ const handleCancel = () => {
           <label>Time Limit: <small>in minutes</small></label>
           <input type="telephone" value={timeLimit} onChange={(e) => setTimeLimit(e.target.value)} placeholder='time limit in minutes'/>
         </div>
+
         <hr />
-
-
+          </div>)
+        }
+      
+        
+        {/* second page */}
+        {pageNav &&
+         ( <div>
+        {!editMode && <CreateQuestionPage onAddQuestion={handleAddQuestion} />}
+         {editMode && <EditQuestionPage onAddQuestion={handleAddQuestion} />}
+         <hr />
         { questions.length > 0 && (
           <div className='ques-list'>
                 <h2>Questions</h2>
@@ -166,19 +182,23 @@ const handleCancel = () => {
 
                         </div>
                           }
+                       
           </div>
         )
+        
+        }   
+<hr />
+          </div>)
         }
-                  
-        <hr />     
 
-        {!editMode && <CreateQuestionPage onAddQuestion={handleAddQuestion} />}
-         {editMode && <EditQuestionPage onAddQuestion={handleAddQuestion} />}
+        
+        <div className='action-btns'>
+          
+        { <button style={{background : '#01bdd7'}} className='save-btn' onClick={ () => setPageNav( !pageNav )  }>{pageNav ? 'Back' : 'Next' }</button>}
+        {pageNav && <button type="submit" onClick={handleSaveQuiz} className='save-btn'>{!onSave ? 'Create Quiz' : <ThreeDotsLoader color='white'/>}</button>}
        
-        <hr />
-        {<button type="submit" onClick={handleSaveQuiz} className='save-btn'>{!onSave ? 'Create Quiz' : <ThreeDotsLoader color='white'/>}</button>}
-       
-        <button className='save-btn' onClick={() =>  onClickLight('Cancel ', 'Are you sure you want to cancel and leave this page? All changes will be lost', handleCancel, null, 'Yes')}>Cancel</button>
+        <button className='save-btn cancel' onClick={() =>  onClickLight('Cancel ', 'Are you sure you want to cancel and leave this page? All changes will be lost', handleCancel, null, 'Yes')}>Cancel</button>
+       </div>
       </div>
     </div>
   )
