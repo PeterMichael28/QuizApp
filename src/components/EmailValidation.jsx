@@ -25,7 +25,7 @@ const EmailValidation = ({emailValidation, setValidation, id, instructions}) => 
                 toast.success('Quiz deleted successfully!!!')
                 setOnDelete(false)
                 setValidation(false)
-            window.location.reload()
+                navigate('/quiz-categories')
             }
             setValidation(false)
         }
@@ -33,7 +33,7 @@ const EmailValidation = ({emailValidation, setValidation, id, instructions}) => 
 
     
   return (
-      <div className='emailValidation'>
+      <section className='emailValidation'>
           <div className='con'>
 
             <p className='note'>Note: Only users that created the quiz are permitted to edit or delete it. 
@@ -62,7 +62,7 @@ const EmailValidation = ({emailValidation, setValidation, id, instructions}) => 
         </div>
         
          
-    </div>
+    </section>
   )
 }
 

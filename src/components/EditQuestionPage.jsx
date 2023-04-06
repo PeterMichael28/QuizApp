@@ -24,12 +24,10 @@ const EditQuestionPage = ({onAddQuestion}) => {
     //handle submit question
     const handleEditSubmit = async (e) => {
       e.preventDefault()
-        
-        const data = {
-            question: questionText,
-            options: [ choice1, choice2, choice3, choice4 ],
-            correctAnswer: correctAnswer
-        }
+
+      // Replace all line breaks with '\n' before saving the question text to the database
+ 
+      
         onAddQuestion( {
             question: questionText,
             options: [ choice1, choice2, choice3, choice4 ],
@@ -56,7 +54,7 @@ const EditQuestionPage = ({onAddQuestion}) => {
 
 
   return (
-    <div className='create-ques'>
+    <section className='create-ques'>
            <h1>Edit Question</h1>
       <form onSubmit={handleEditSubmit }>
         <div className='input-div'>
@@ -91,7 +89,7 @@ const EditQuestionPage = ({onAddQuestion}) => {
         </div>
               <button type='submit'>Save Edit</button>
       </form>
-    </div>
+    </section>
   )
 }
 

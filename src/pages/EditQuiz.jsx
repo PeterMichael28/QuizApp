@@ -168,7 +168,7 @@ const EditQuiz = () => {
  };
 
  return (
-  <div className="create-quiz">
+  <main className="create-quiz">
    <h1 className="h1">Edit Quiz</h1>
 
    {/* first Page */}
@@ -296,7 +296,7 @@ const EditQuiz = () => {
    </button>
        
    </div>
-  </div>
+  </main>
  );
 };
 

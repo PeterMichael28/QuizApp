@@ -118,7 +118,7 @@ const handleCancel = () => {
 
 
   return (
-    <div className='create-quiz'>
+    <main className='create-quiz'>
 
       
       
@@ -200,7 +200,7 @@ const handleCancel = () => {
         <button className='save-btn cancel' onClick={() =>  onClickLight('Cancel ', 'Are you sure you want to cancel and leave this page? All changes will be lost', handleCancel, null, 'Yes')}>Cancel</button>
        </div>
       </div>
-    </div>
+    </main>
   )
 }
 

@@ -30,10 +30,10 @@ const Result = () => {
     //total scores in %
     const totalScoreInPercent = Math.ceil((rightAnswers/allQuestions) * 100)
     return (
-        <div className="results">
+        <main className="results">
             <h2>Results</h2>
             <h3>{totalScoreInPercent < 50 ? 'Oooppss!!!' : 'Congratulations!!!' }</h3>
-            <p className="total">Total Score: <span style={{color: totalScoreInPercent < 50 ? 'crimson' : 'green'}}>{ totalScoreInPercent }%</span></p>
+            <p className="total">Total Score: <span style={{color: totalScoreInPercent < 50 ? 'crimson' : 'rgb(9, 230, 9)'}}>{ totalScoreInPercent }%</span></p>
             <div className="result-text">
                 <p>Number of right answers: <span>{rightAnswers }</span></p>
                 <p>Number of wrong answers: <span>{wrongAnswers}</span></p>
@@ -45,7 +45,7 @@ const Result = () => {
                 <button onClick={handleReset}>Restart Quiz</button>
                 <button onClick={handleHome}>Go Back Home</button>
             </div>
-        </div>
+        </main>
     )
 }
 

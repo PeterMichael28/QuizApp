@@ -20,6 +20,9 @@ const CreateQuestionPage = ({onAddQuestion}) => {
     const handleSubmit = async (e) => {
       
         e.preventDefault()
+
+        // Replace all line breaks with '\n' before saving the question text to the database
+
        
         onAddQuestion( {
             question: questionText,
@@ -38,7 +41,7 @@ const CreateQuestionPage = ({onAddQuestion}) => {
         setCorrectAnswer('');
       };
   return (
-      <div className='create-ques'>
+      <section className='create-ques'>
            <h2>Create a New Question</h2>
       <form onSubmit={handleSubmit}>
         <div className='input-div'>
@@ -73,7 +76,7 @@ const CreateQuestionPage = ({onAddQuestion}) => {
         </div>
               <button type='submit'>Save Question</button>
       </form>
-    </div>
+    </section>
   )
 }
 

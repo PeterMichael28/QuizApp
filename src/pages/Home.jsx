@@ -48,7 +48,7 @@ const Home = () => {
 
 
  return (
-  <div className="home">
+  <main className="home">
    <div className="home-con">
     <h2>Select A Quiz to Continue</h2>
 
@@ -73,7 +73,7 @@ const Home = () => {
      Create Quiz
     </Link>
    </div>
-  </div>
+  </main>
  );
 };
 

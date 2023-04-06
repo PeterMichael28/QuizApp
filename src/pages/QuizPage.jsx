@@ -107,7 +107,7 @@ const QuizPage = () => {
 }
 
   return (
-    <div className='quiz'>
+    <main className='quiz'>
       <img src={bgImage} alt="bgImage" />
 
       <div className='quiz-question-con'>
@@ -122,7 +122,7 @@ const QuizPage = () => {
           {questions.length > 0 && <Questions questions={ questions} />}
       </div>
       
-    </div>
+    </main>
   )
 }
 

@@ -29,9 +29,13 @@ const Questions = ({ questions }) => {
   dispatch(resetQues("option"));
   navigate(`/quiz-categories`);
  };
+
+ const formattedQuestionText = currentQues.question.replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;").replace(/\n/g, '<br>');
+
+   
  return (
-  <div className="questions-con">
-   <div className="question">{currentQues.question}</div>
+  <main className="questions-con">
+   <p className="question" dangerouslySetInnerHTML={{ __html: formattedQuestionText }} />
 
    {/* Options */}
 
@@ -81,7 +85,7 @@ const Questions = ({ questions }) => {
      >Quit</button>
     )}
    </div>
-  </div>
+  </main>
  );
 };
 export default Questions;

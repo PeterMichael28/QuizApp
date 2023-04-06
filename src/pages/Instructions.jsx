@@ -43,7 +43,7 @@ const Instructions = () => {
   }
   
   return (
-    <div className='instructions'>
+    <main className='instructions'>
       <h2>Quiz Details</h2>
 
       <div>
@@ -51,7 +51,7 @@ const Instructions = () => {
           <h5>Quiz Name</h5>
           <hr />
           <p className='name'>{ data?.quizName }</p>
-          <small>created by { data?.email }</small>
+          {/* <small>created by { data?.email }</small> */}
         </div>
 
         <div className='details description'>
@@ -92,6 +92,7 @@ const Instructions = () => {
           onClick={ ( e ) => {
             e.stopPropagation();
             setValidation(true)
+           
           }}
           className='delete'
          >
@@ -105,7 +106,7 @@ const Instructions = () => {
  
             
         }
-    </div>
+    </main>
   )
 }
 
